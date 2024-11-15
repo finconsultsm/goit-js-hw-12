@@ -2,22 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <div class="search-wrapper">
+      <form class="search-form">
+        <input type="text" name="query" placeholder="Search images" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div>
+      <ul class="gallery"></ul>
+      <div class="loader-wrapper">
+        <span class="loader"></span>
+      </div>
+    </div>
+    <div class="load-more hidden"><button>Load more</button></div>
+    <p class="end-content hidden">
+      We're sorry, but you've reached the end of search results.
+    </p>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>

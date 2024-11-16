@@ -89,6 +89,8 @@ async function fetchImage(query, perPage, page = 1) {
 
     loader.classList.remove('show');
 
+
+
     if (data.hits.length < 1) {
       loadMoreBtn.classList.add('hidden');
       iziToast.error({
@@ -101,12 +103,12 @@ async function fetchImage(query, perPage, page = 1) {
       loadMoreBtn.classList.remove('hidden');
     }
 
-    if (page >= totalPages(data.totalHits, perPage)) {
-      loadMoreBtn.classList.add('hidden');
-      endContent.classList.remove('hidden');
-    } else {
-      endContent.classList.add('hidden');
-    }
+if (data.hits.length > 0 && page >= totalPages(data.totalHits, perPage)) {
+  loadMoreBtn.classList.add('hidden');
+  endContent.classList.remove('hidden');
+} else {
+  endContent.classList.add('hidden');
+}
 
     createGalaryMatkup(data.hits);
   } catch (err) {
